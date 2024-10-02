@@ -25,7 +25,7 @@ const FullNameDisplay = () => {
                 </div>
                 <div><button type='submit' >Submit</button></div>
             </form>
-            <p>{fullname && `Full Name: ${fullname}`}</p>
+            <p>{fullname.trim() && `Full Name: ${fullname}`}</p>
         </div>
     )
 }
