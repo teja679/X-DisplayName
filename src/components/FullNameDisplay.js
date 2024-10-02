@@ -21,12 +21,12 @@ const FullNameDisplay = () => {
             </h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor='firstname'>First Name:{' '} <input required onChange={handleChange} id='firstname' /> </label>
+                    <label htmlFor='firstname'>First Name:{' '} <input type='text' required onChange={handleChange} id='firstname' /> </label>
                 </div>
                 <div>
-                    <label htmlFor='lastname'>Last Name: <input required onChange={handleChange} id='lastname' /> </label>
+                    <label htmlFor='lastname'>Last Name: <input type='text' required onChange={handleChange} id='lastname' /> </label>
                 </div>
-                <div><input type='submit' /></div>
+                <div><button type='submit' /></div>
             </form>
             <br />
             <p>Full Name: {fullname}</p>
