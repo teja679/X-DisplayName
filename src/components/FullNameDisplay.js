@@ -7,9 +7,9 @@ const FullNameDisplay = () => {
     const [fullname, setFullname] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault()
-        setFullname(`${firstname} ${lastname}`)
-        setFirstname('')
-        setLastname('')
+        setFullname(`${firstname.trim()} ${lastname.trim()}`)
+        // setFirstname('')
+        // setLastname('')
     }
     return (
         <div className='main-div'>
@@ -26,7 +26,7 @@ const FullNameDisplay = () => {
                 <div><button type='submit' >Submit</button></div>
             </form>
             <br />
-            <p>Full Name: {fullname}</p>
+            <span>{`Full Name: ${fullname}`}</span>
         </div>
     )
 }
