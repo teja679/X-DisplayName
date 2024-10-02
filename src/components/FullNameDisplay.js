@@ -2,17 +2,14 @@ import React, { useState } from 'react'
 import './styles.css'
 
 const FullNameDisplay = () => {
-    const [name, setName] = useState({ firstname: '', lastname: '' })
+    const [firstname, setFirstname] = useState("")
+    const [lastname, setLastname] = useState("")
     const [fullname, setFullname] = useState('')
-    const handleChange = (e) => {
-        setName({
-            ...name,
-            [e.target.id]: e.target.value
-        })
-    }
     const handleSubmit = (e) => {
         e.preventDefault()
-        setFullname(`${name.firstname} ${name.lastname}`)
+        setFullname(`${firstname} ${lastname}`)
+        setFirstname('')
+        setLastname('')
     }
     return (
         <div className='main-div'>
@@ -21,10 +18,10 @@ const FullNameDisplay = () => {
             </h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor='firstname'>First Name:{' '} <input type='text' required onChange={handleChange} id='firstname' /> </label>
+                    <label htmlFor='firstname'>First Name:{' '} <input type='text' value={firstname} required onChange={(e) => setFirstname(e.target.value)} id='firstname' /> </label>
                 </div>
                 <div>
-                    <label htmlFor='lastname'>Last Name: <input type='text' required onChange={handleChange} id='lastname' /> </label>
+                    <label htmlFor='lastname'>Last Name: <input type='text' value={lastname} required onChange={(e) => setLastname(e.target.value)} id='lastname' /> </label>
                 </div>
                 <div><button type='submit' >Submit</button></div>
             </form>
