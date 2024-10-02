@@ -26,7 +26,7 @@ const FullNameDisplay = () => {
                 <div>
                     <label htmlFor='lastname'>Last Name: <input type='text' required onChange={handleChange} id='lastname' /> </label>
                 </div>
-                <div><button type='submit' /></div>
+                <div><button type='submit' >Submit</button></div>
             </form>
             <br />
             <p>Full Name: {fullname}</p>
